@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link rel="stylesheet" href=".../../bootstrap-5.2.0-dist/css/bootstrap.css">
+    <link rel="shortcut icon" href="./suit-heart.svg " type="image/x-icon"></div>
+   
+</head>
+<body>
+    <div class="mb-3 border col-lg-6 ms-2 me-2 border-danger mt-lg-5 mx-lg-auto">
+        <h1 class="text-center bg-danger text-light"><img src="./suit-heart.svg" width="85px" alt="">LOVE CALCULATOR<img src="./suit-heart.svg" width="85px" alt=""></h1>
+        <label for="Name" class=" form-label text-center fw-bold d-block text-danger fs-4 mt-3">YOUR NAME</label>
+        <input type="text" class="form-control text-center fw-bold mt-2 mb-2" id="Name">
+        <div id="display"></div>
+        <div id="display2"></div>
+        <div >
+            <label for="crush" class=" form-label text-center fw-bold d-block text-danger fs-4 mt-3">YOUR CRUSH NAME</label>
+            <input type="text" class="form-control text-center fw-bold" id="crush">
+        </div>
+        <button onclick="check()" class="mx-auto d-block mt-2 btn btn-light mt-3 mb-3 bg-danger text-light">check</button>
+    </div>
+    <script>
+        var allInput=[]
+        function check(){
+            bothName={
+                name:Name.value,
+                crush:crush.value,
+            }
+            console.log(bothName)
+            display.innerHTML=" "
+            if (Name.value=="" || crush.value=="") {
+                display2.innerHTML=`<div class='alert alert-danger text-center fw-bold'>Fill all blank space</div> `
+            
+                
+            } else {
+                display2.innerHTML=""
+                allInput.push(bothName)
+                for (let index = 0; index < allInput.length; index++) {
+                    display.innerHTML=`<div class="fw-bold text-center text-light bg-danger fs-3">${Name.value} you are compatible with ${crush.value} by ${Math.floor(Math.random()*101)}%</div>
+                    `
+                }
+            }
+
+        }
+
+    </script>
+</body>
+</html>
